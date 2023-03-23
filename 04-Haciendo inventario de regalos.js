@@ -52,4 +52,19 @@
     todos los regalos que hay que reponer.
 */
 
+function getGiftsToRefill(a1, a2, a3) {
+
+  let res = [];
+
+  res = a1.filter(elem => a2.indexOf(elem) === -1 && a3.indexOf(elem) === -1);
+
+  res = res.concat(a2.filter(elem => a1.indexOf(elem) === -1 && a3.indexOf(elem) === -1));
+
+  res = res.concat(a3.filter(elem => a1.indexOf(elem) === -1 && a2.indexOf(elem) === -1));
+
+  res = [... new Set(res)];
+
+  return res;
+}
+
 
